@@ -77,7 +77,8 @@ function loadImage(fileName){
 function loadCurrentTime(){
 
     currentTime=new Date();
-    document.querySelector('h1').innerHTML=currentTime;
+    document.querySelector('h1').innerHTML=currentTime.getHours()+":"+currentTime.getMinutes()+
+    ":"+currentTime.getSeconds();
     setTimeout('loadCurrentTime()',1000);
 
 }
