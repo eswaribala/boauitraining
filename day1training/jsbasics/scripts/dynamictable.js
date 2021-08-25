@@ -231,7 +231,29 @@ users=[
         }
     }
 ]
-//read values from array
-users.forEach(user=>{
-    console.log(user);
+window.addEventListener('load',function(){
+    //read values from array
+    console.log(users.length);
+    var table=document.createElement('table');
+    users.forEach(user=>{
+        var row=document.createElement('tr');
+        var col=document.createElement('td')
+        var text=document.createTextNode(user.id);
+        col.appendChild(text);
+        row.appendChild(col);
+        var col=document.createElement('td')
+        var text=document.createTextNode(user.name);
+        col.appendChild(text);
+        row.appendChild(col);
+        var col=document.createElement('td')
+        var text=document.createTextNode(user.email);
+        col.appendChild(text);
+        row.appendChild(col);
+        //console.log(user);
+        table.appendChild(row);
+    })
+    var formRef=document.querySelector("form");
+    formRef.appendChild(table);
+
+
 })
