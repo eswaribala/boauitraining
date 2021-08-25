@@ -4,7 +4,16 @@ function Customer(id,name,phoneNumber){
     this.name=name;
     this.phoneNumber=phoneNumber;
 }
+//
+//instance methods
+Customer.prototype.updatePhoneNumber=function(phoneNumber){
+    this.phoneNumber=phoneNumber;
+}
 
 //create the object
 var customer=new Customer(483658,'Arun',945699854698);
 console.log(customer);
+//invoke update phoneNumber
+customer.updatePhoneNumber(1234498909);
+console.log(customer);
+
