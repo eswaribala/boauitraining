@@ -1,6 +1,12 @@
 window.addEventListener('load',function(){
     console.log("it's my preferred script");
-    var paraRef=document.getElementsByTagName('p')
+
+    document.body.addEventListener('load',function(){
+        loadCurrentTime();
+    })
+
+
+        var paraRef=document.getElementsByTagName('p')
     console.log(paraRef.length)
 
     for(let i=0;i<paraRef.length;i++) {
@@ -67,5 +73,13 @@ function loadImage(fileName){
     {
         console.log("Image not found");
     }
+
+}
+
+function loadCurrentTime(){
+
+    currentTime=new Date();
+    document.querySelector('h1').innerHTML=currentTime;
+    setTimeout(loadCurrentTime(),1000);
 
 }
