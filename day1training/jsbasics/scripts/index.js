@@ -1,9 +1,7 @@
 window.addEventListener('load',function(){
     console.log("it's my preferred script");
 
-    document.body.addEventListener('load',function(){
-        loadCurrentTime();
-    })
+    loadCurrentTime();
 
 
         var paraRef=document.getElementsByTagName('p')
@@ -75,11 +73,11 @@ function loadImage(fileName){
     }
 
 }
-
+//recursive
 function loadCurrentTime(){
 
     currentTime=new Date();
     document.querySelector('h1').innerHTML=currentTime;
-    setTimeout(loadCurrentTime(),1000);
+    setTimeout('loadCurrentTime()',1000);
 
 }
