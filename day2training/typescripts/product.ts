@@ -53,6 +53,10 @@ class Product{
     set active(value: boolean) {
         this._active = value;
     }
+
+    display(){
+        console.log(this._productId);
+    }
 }
 
 var product=new Product(935696356,"laptop",
@@ -63,8 +67,8 @@ var product=new Product(935696356,"laptop",
 //product.cost=67000;
 //product.active=true;
 console.log(product);
-
-
+product.display();
+//inheritance
 class SeasonalProduct extends Product{
     private _offer:number;
 
@@ -81,7 +85,13 @@ class SeasonalProduct extends Product{
     set offer(value: number) {
         this._offer = value;
     }
+//method overriding
+    display(){
+        super.display();
+        console.log(this._offer);
+    }
 }
 var seasonalProduct=new SeasonalProduct(935696356,"laptop",
     new Date(),76000,true,0.25);
 console.log(seasonalProduct);
+seasonalProduct.display();
