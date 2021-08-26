@@ -1,3 +1,4 @@
+//rest param packs args to array
 function getEmployee(id=48356834,...skillSet){
     console.log(id);
     skillSet.forEach(skill=>{
