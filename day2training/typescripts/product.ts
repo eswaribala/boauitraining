@@ -1,4 +1,4 @@
-class Product{
+abstract class Product{
     private _productId:number;
     private _name:string;
     private _dop:Date;
@@ -54,11 +54,9 @@ class Product{
         this._active = value;
     }
 
-    display(){
-        console.log(this._productId);
-    }
+   abstract display():void;
 }
-
+/*
 var product=new Product(935696356,"laptop",
     new Date(),76000,true);
 //product.productId=935696356;
@@ -68,6 +66,8 @@ var product=new Product(935696356,"laptop",
 //product.active=true;
 console.log(product);
 product.display();
+*/
+
 //inheritance
 class SeasonalProduct extends Product{
     private _offer:number;
@@ -87,7 +87,7 @@ class SeasonalProduct extends Product{
     }
 //method overriding
     display(){
-        super.display();
+        //super.display();
         console.log(this._offer);
     }
 }
