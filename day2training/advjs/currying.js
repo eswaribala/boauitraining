@@ -1,3 +1,4 @@
+//non curry
 let getUser = (firstname, lastname, age) => {
     console.log(
         "Hi, My Name is " + firstname + " " + lastname + " and Age is " + age
@@ -63,7 +64,7 @@ let names = [
         age: 25,
     },
 ]
-
+//generics
 const get = function(property) {
     return function(object) {
         return object[property]
