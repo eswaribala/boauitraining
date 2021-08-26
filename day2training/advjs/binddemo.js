@@ -9,11 +9,16 @@ Person.prototype.printName = function(){
     console.log(this.name + ' ' + this.age);
 }
 
-var katy = new Person("Katy", 25);
+var p1 = new Person("p1", 25);
+var p2 = new Person("p22rwkhfj", 35);
+var p3 = new Person("p3", 45);
 
-var printKaty = Person.prototype.printName.bind(katy);
+//invoke method directly using instance
+p1.printName();
+//ref to instance method
+var printKaty = Person.prototype.printName.bind(p1);
 printKaty();
-
+var p1 = new Person("p1", 75);
 
 //call vs apply vs bind
 
