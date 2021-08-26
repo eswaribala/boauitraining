@@ -6,6 +6,14 @@ class Product{
     private _active:boolean;
 
 
+    constructor(productId: number, name: string, dop: Date, cost: number, active: boolean) {
+        this._productId = productId;
+        this._name = name;
+        this._dop = dop;
+        this._cost = cost;
+        this._active = active;
+    }
+
     get productId(): number {
         return this._productId;
     }
@@ -47,10 +55,33 @@ class Product{
     }
 }
 
-var product=new Product();
-product.productId=935696356;
-product.name="Laptop";
-product.dop=new Date();
-product.cost=67000;
-product.active=true;
+var product=new Product(935696356,"laptop",
+    new Date(),76000,true);
+//product.productId=935696356;
+//product.name="Laptop";
+//product.dop=new Date();
+//product.cost=67000;
+//product.active=true;
 console.log(product);
+
+
+class SeasonalProduct extends Product{
+    private _offer:number;
+
+    constructor(productId: number, name: string, dop: Date, cost: number, active: boolean, offer: number) {
+        super(productId,name,dop,cost,active);
+        this._offer = offer;
+    }
+
+
+    get offer(): number {
+        return this._offer;
+    }
+
+    set offer(value: number) {
+        this._offer = value;
+    }
+}
+var seasonalProduct=new SeasonalProduct(935696356,"laptop",
+    new Date(),76000,true,0.25);
+console.log(seasonalProduct);
