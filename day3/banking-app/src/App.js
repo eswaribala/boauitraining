@@ -3,6 +3,9 @@ import './App.css';
 import React from "react";
 import BankLogo from './Logo/logo'
 import {BankMenu} from "./BankMenu/bankmenu";
+import 'primereact/resources/themes/saga-blue/theme.css'
+import 'primereact/resources/primereact.min.css'
+import 'primeicons/primeicons.css'
 //convert to stateful component
 class App extends React.Component{
 
@@ -10,21 +13,11 @@ class App extends React.Component{
         super(props, context);
         this.state={
             currentTime:new Date(),
-            menu:[{
-                label:'CreditCards',icon:'pi pi-fw pi-credit-card',command:()=>{
-                    window.location.hash="/CreditCards"
-                }
-            },
-                {
-                    label:'Savings',icon:'',command:()=>{
-            window.location.hash="/Savings"
-        }
-                },
-                {
-                    label:'Checking',icon:'',command:()=>{
-                        window.location.hash="/Bankmenu"
-                    }
-                }]
+            menu:[
+                {label: 'CreditCards', icon: 'pi pi-fw pi-credit-card', command: () => { window.location.hash = "/CreditCards" }},
+                {label: 'Savings', icon: 'pi pi-fw pi-save', command: () => { window.location.hash  = "/Savings" }},
+                {label: 'Checking', icon: 'pi pi-fw pi-check-circle', command: () => { window.location.hash  = "/Checking" }}
+            ]
 
         }
     }
