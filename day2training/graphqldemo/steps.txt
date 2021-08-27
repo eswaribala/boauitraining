@@ -1,0 +1,39 @@
+npm install --save express@4.16.4 cors@2.8.4 express-graphql@0.6.12 graphql@14.0.2 sqlite3@4.0.2
+
+download csv
+git clone https://github.com/JeffSackmann/tennis_atp.git
+
+sqlite3 tennis.db
+
+CREATE TABLE players(
+  "id" INTEGER,
+  "first_name" TEXT,
+  "last_name" TEXT,
+  "hand" TEXT,
+  "birthday" INTEGER,
+  "country" TEXT
+);
+
+CREATE TABLE rankings(
+  "date" INTEGER,
+  "rank" INTEGER,
+  "player" INTEGER,
+  "points" INTEGER
+);
+
+.import F:/Expressjs/graphqldemo/tennis_atp-master/atp_players.csv players
+
+.import F:/Expressjs/graphqldemo/tennis_atp-master/atp_rankings_current.csv rankings
+
+
+node index.js
+
+http://localhost:4201/graphql
+
+{
+  players(offset:100,limit:5)
+  {
+    first_name,
+    last_name
+  }
+}
